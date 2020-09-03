@@ -1,5 +1,5 @@
 const userController = {};
-const jwt = require('../utils/jwt');
+const jwt = require("../utils/jwt");
 const User = require("../models/users");
 const passwordGen = require("password-generator");
 
@@ -9,7 +9,10 @@ userController.get = (id) =>
       (details) => {
         return resolve(details);
       },
-      (err) => reject(err)
+      (err) => {
+        console.log(err);
+        reject({ status: 500, err });
+      }
     );
   });
 
