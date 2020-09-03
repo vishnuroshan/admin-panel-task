@@ -1,7 +1,7 @@
 {
   "name": "node-api",
   "version": "0.1.0",
-  "description": "basic node api",
+  "description": "basic node api task",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vishnuroshan/node-api.git"
+    "url": "git+https://github.com/vishnuroshan/admin-panel-task.git"
   },
   "keywords": [
     "basic",
@@ -20,9 +20,9 @@
   "author": "vishnu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vishnuroshan/node-api/issues"
+    "url": "https://github.com/vishnuroshan/admin-panel-task/issues"
   },
-  "homepage": "https://github.com/vishnuroshan/node-api#readme",
+  "homepage": "https://github.com/vishnuroshan/admin-panel-task#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
