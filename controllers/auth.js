@@ -10,13 +10,23 @@ authController.create = async (newUser) =>
         const token = jwt.generateJWT({
           email: user.email,
           user_id: user._id,
-          isAdmin: user.isAdmin
+          isAdmin: user.isAdmin,
         });
 
-        return resolve({ status: 200, _id: user._id, createdAt: user.createdAt, token });
+        return resolve({
+          status: 200,
+          _id: user._id,
+          createdAt: user.createdAt,
+          token,
+        });
       },
       (err) => {
-        if(err.code===11000) return reject({ status: 400, error: 'must be unique', field: err.keyValue });
+        if (err.code === 11000)
+          return reject({
+            status: 400,
+            error: "must be unique",
+            field: err.keyValue,
+          });
         else return reject({ status: 500, error: err });
       }
     );

@@ -16,10 +16,10 @@ userController.get = (id) =>
     );
   });
 
-userController.listEmployees = (user) =>
+userController.listEmployees = (user, filters) =>
   new Promise((resolve, reject) => {
     if (user && user._id && user.isAdmin === true) {
-      User.findByAdmin(user._id).then(
+      User.findByAdmin(user._id, filters).then(
         (employees) => {
           return resolve({ status: 200, employees });
         },
@@ -45,6 +45,8 @@ userController.addEmployee = (newEmployee, user) =>
 
           return resolve({
             _id: user._id,
+            firstname: user.firstname,
+            lastname: user.lastname,
             createdAt: user.createdAt,
             email: user.email,
             password: newEmployee.password,

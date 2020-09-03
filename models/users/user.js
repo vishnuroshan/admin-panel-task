@@ -4,7 +4,10 @@ const bcrypt = require("bcryptjs");
 
 const UserSchema = new Schema(
   {
-    name: {
+    firstname: {
+      type: String,
+    },
+    lastname: {
       type: String,
     },
     email: {
@@ -14,7 +17,7 @@ const UserSchema = new Schema(
     password: {
       type: String,
       set: (pass) => bcrypt.hashSync(pass, 10),
-      get: () => "*********"
+      get: () => "*********",
     },
     isAdmin: {
       type: Boolean,
@@ -34,6 +37,6 @@ const UserSchema = new Schema(
 //   }
 // });
 
-const User = mongoose.model("admin", UserSchema);
+const User = mongoose.model("users", UserSchema);
 
 module.exports = User;

@@ -7,7 +7,8 @@ router.post(
   "/sign-up",
   celebrate({
     body: Joi.object().keys({
-      name: Joi.string().required(),
+      firstname: Joi.string().required(),
+      lastname: Joi.string().optional(),
       email: Joi.string().email().required(),
       password: Joi.string().required(),
       // .pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/, { name: 'passwordRule' })
