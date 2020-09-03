@@ -21,5 +21,7 @@ npm start <custom port number>
 
 ### sample .env properties
 KEY=
+
 PORT=
+
 DBURI=
